@@ -8,29 +8,29 @@ import '../constants.dart';
 
 class ResultsPage extends StatelessWidget {
   String? r, b, i;
-  ResultsPage() {}
-  // ResultsPage(
-  //     {super.key,
-  //     String result = "Normal",
-  //     String bmi = "1000",
-  //     String interpresentation = "Unknown"}) {
-  //   r = result;
-  //   b = bmi;
-  //   i = interpresentation;
 
-  //   print(result);
-  //   print(bmi);
-  //   print(interpresentation);
-  //   print("Hello");
-  // }
+  ResultsPage(
+      {super.key,
+      result = "Normal",
+      bmi = "1000",
+      interpresentation = "Unknown"}) {
+    r = result;
+    b = bmi;
+    i = interpresentation;
+
+    print(result);
+    print(bmi);
+    print(interpresentation);
+    print("Hello");
+  }
 
   @override
   Widget build(BuildContext context) {
-    final args = ModalRoute.of(context)!.settings.arguments;
-    String? result = (args as Map<String, dynamic>?)?['result'] as String?;
-    String? bmi = (args as Map<String, dynamic>?)?['bmi'] as String?;
-    String? interpresentation =
-        (args as Map<String, dynamic>?)?['interpresentation'] as String?;
+    // final args = ModalRoute.of(context)!.settings.arguments;
+    // String? result = (args as Map<String, dynamic>?)?['result'] as String?;
+    // String? bmi = (args as Map<String, dynamic>?)?['bmi'] as String?;
+    // String? interpresentation =
+    //     (args as Map<String, dynamic>?)?['interpresentation'] as String?;
     return Scaffold(
       appBar: AppBar(
         title: Text("BMI Calculator"),
@@ -51,15 +51,15 @@ class ResultsPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
-                    result.toString(),
+                    r!.toString(),
                     style: kTextResultStyle,
                   ),
                   Text(
-                    bmi.toString(),
+                    b!.toString(),
                     style: kBMIResultStyle,
                   ),
                   Text(
-                    interpresentation.toString(),
+                    i!.toString(),
                     style: kLabelTextStyle,
                     textAlign: TextAlign.center,
                   )

@@ -1,4 +1,5 @@
 import 'package:bmi_calculator/calculator_brain.dart';
+import 'package:bmi_calculator/screens/results_page.dart';
 import 'package:flutter/material.dart';
 
 import '../Components/bottom_button.dart';
@@ -211,14 +212,18 @@ class _InputPageState extends State<InputPage> {
             CalculatorBrain calc =
                 CalculatorBrain(height: height.toDouble(), weight: weight);
 
-            Map<String, dynamic> dataMap = {
-              "result": calc.getResult(),
-              "bmi": calc.bmiCalculate(),
-              "interpresentation": calc.getInterpresentation(),
-            };
+            // Map<String, dynamic> dataMap = {
+            //   "result": calc.getResult(),
+            //   "bmi": calc.bmiCalculate(),
+            //   "interpresentation": calc.getInterpresentation(),
+            // };
 
-            Navigator.of(context)
-                .pushNamed("/results_page", arguments: dataMap);
+            Navigator.of(context).pushNamed("/results_page",
+                arguments: ResultsPage(
+                  result: calc.getResult(),
+                  bmi: calc.bmiCalculate(),
+                  interpresentation: calc.getInterpresentation(),
+                ));
           },
         )
       ],
